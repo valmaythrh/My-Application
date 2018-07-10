@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class TrySplash extends AppCompatActivity {
+public class ActivitySplashScreen extends AppCompatActivity {
     private int SLEEP_TIMER = 3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,7 +16,7 @@ public class TrySplash extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        setContentView(R.layout.activity_try_splash);
+        setContentView(R.layout.splash_screen);
         getSupportActionBar().hide();
         LogoLauncher logoLauncher = new LogoLauncher();
         logoLauncher.start();
@@ -29,9 +29,9 @@ public class TrySplash extends AppCompatActivity {
             }catch(InterruptedException e){
                 e.printStackTrace();
             }
-            Intent intent = new Intent(TrySplash.this, MainActivity.class);
+            Intent intent = new Intent(ActivitySplashScreen.this, MainActivity.class);
             startActivity(intent);
-            TrySplash.this.finish();
+            ActivitySplashScreen.this.finish();
         }
     }
 }
